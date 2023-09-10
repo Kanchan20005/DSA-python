@@ -13,13 +13,11 @@ class Solution:
                 diff = curend-curstart
                 if maxProfit < diff:
                     maxProfit = diff
-                if j == len(prices):
-                    break
-                curend = prices[j]
             else:
                 curstart = prices[i]
-                if j == len(prices):
-                    break
-                curend = prices[j]
+
+            if j == len(prices):
+                break
+            curend = prices[j]
 
         return maxProfit
