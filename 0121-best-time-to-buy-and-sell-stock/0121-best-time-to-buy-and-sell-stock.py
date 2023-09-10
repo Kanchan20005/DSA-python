@@ -8,7 +8,6 @@ class Solution:
                 curstart = prices[0]
                 curend = prices[0]
                 j = 1
-            j = i+1
             if curend>=curstart:
                 diff = curend-curstart
                 if maxProfit < diff:
@@ -16,8 +15,8 @@ class Solution:
             else:
                 curstart = prices[i]
 
-            if j == len(prices):
+            if i+1 == len(prices):
                 break
-            curend = prices[j]
+            curend = prices[i+1]
 
         return maxProfit
