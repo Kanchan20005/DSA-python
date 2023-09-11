@@ -1,7 +1,12 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        for i in range(len(nums)):
-            if nums[i] == target:
-                return i
+        first, last = 0, len(nums)
+        while first < last:
+            mid = int(first+(last-first)//2)
+            if nums[mid] ==  target:
+                return mid
+            elif nums[mid] < target:
+                first = mid+1
+            else:
+                last = mid
         return -1
-        # return (i for i in nums if i == target)
