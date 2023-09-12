@@ -17,8 +17,7 @@ class MyQueue:
     def empty(self) -> bool:
         if not self.y:
             return True
-        else:
-            return False
+
         
 
 
