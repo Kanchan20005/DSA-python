@@ -2,7 +2,6 @@ class MyQueue:
 
     def __init__(self):
         self.y = []
-        self.next = None
 
     def push(self, x: int) -> None:
         self.y.append(x)
