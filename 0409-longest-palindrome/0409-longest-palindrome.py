@@ -1,17 +1,19 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
         dic = {}
-        dic1 = {}
+        hasodd = False
         for i in s: 
+            if i in dic:
+                continue
             wc = s.count(i)
             if wc%2 == 0:
                 dic[i] = wc
             else:
-                    dic1[i] = wc-1
+                if not hasodd:
+                    dic[i] = wc
+                    hasodd = True
+                else:
+                    dic[i] = wc-1
         val = list(dic.values())
-        val1 = list(dic1.values())
-        if dic1:
-            return sum(val)+sum(val1)+1
-        else:
-            return sum(val)
+        return sum(val)
         
